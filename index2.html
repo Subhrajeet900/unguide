@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniGuide - Your Academic Roadmap</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><i class="fas fa-graduation-cap"></i> UniGUIDE</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#fields">Fields</a></li>
+                <li><a href="#tracking">Progress Tracking</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button id="loginBtn" class="login-btn">Login</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to UniGUIDE</h1>
+                <p>Your personalized roadmap to academic success</p>
+                <div class="hero-buttons">
+                    <a href="#fields" class="cta-button">Explore Fields</a>
+                    <a href="#tracking" class="cta-button secondary">Track Progress</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <span class="stat-number">10,000+</span>
+                    <span class="stat-label">Students</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-book"></i>
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Courses</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Success Rate</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="fields" class="fields-section">
+            <h2>Educational Fields</h2>
+            <div class="fields-grid" id="fieldsGrid">
+                <!-- Fields will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <section id="tracking" class="tracking-section hidden">
+            <h2>Progress Tracking</h2>
+            <div class="tracking-container">
+                <div class="progress-overview">
+                    <h3>Your Progress</h3>
+                    <div class="progress-bars" id="progressBars">
+                        <!-- Progress bars  by JavaScript -->
+                    </div>
+                </div>
+                <div class="completed-tasks">
+                    <h3>Completed Tasks</h3>
+                    <div id="completedTasksList">
+                        <!-- Completed tasks  by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="roadmap-section hidden">
+            <h2>Study Roadmap</h2>
+            <button class="back-button" onclick="hideRoadmap()"><i class="fas fa-arrow-left"></i> Back to Fields</button>
+            <div id="roadmapContent"></div>
+        </section>
+
+        <section id="features" class="features-section">
+            <h2>Why Choose UniGUIDE?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-road"></i>
+                    <h3>Clear Roadmap</h3>
+                    <p>Step-by-step guidance for your educational journey</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Project Ideas</h3>
+                    <p>Industry-relevant projects for your portfolio</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your learning journey</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Support</h3>
+                    <p>Learn and grow with peers</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>UniGuide</h3>
+                <p>Your path to academic success</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#fields">Fields</a></li>
+                    <li><a href="#tracking">Progress Tracking</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@uniguide.com</p>
+                <p><i class="fas fa-phone"></i> 91+000850000</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 UniGuide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Login to UniGUIDE</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="cta-button">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script2.js"></script>
+</body>
+</html>
