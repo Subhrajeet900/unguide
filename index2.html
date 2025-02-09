@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniGuide - Your Academic Roadmap</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style4.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -14,9 +14,8 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#fields">Fields</a></li>
-                <li><a href="#tracking">Progress Tracking</a></li>
+                <li><a href="#tracking">suggestion</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
                 <li><button id="loginBtn" class="login-btn">Login</button></li>
             </ul>
         </nav>
@@ -29,7 +28,7 @@
                 <p>Your personalized roadmap to academic success</p>
                 <div class="hero-buttons">
                     <a href="#fields" class="cta-button">Explore Fields</a>
-                    <a href="#tracking" class="cta-button secondary">Track Progress</a>
+                    <a href="#tracking" class="cta-button secondary">Give suggestion</a>
                 </div>
             </div>
             <div class="hero-stats">
@@ -53,62 +52,64 @@
 
         <section id="fields" class="fields-section">
             <h2>Educational Fields</h2>
-            <div class="fields-grid" id="fieldsGrid">
-                <!-- Fields will be populated by JavaScript -->
+            <div class="category-nav">
+                <button class="category-btn active" data-category="all">All Schools</button>
+                <button class="category-btn" data-category="engineering">
+                    <i class="fas fa-building"></i>
+                    School of Engineering & Technology
+                </button>
+                <button class="category-btn" data-category="medical">
+                    <i class="fas fa-stethoscope"></i>
+                    School of Medical Sciences
+                </button>
+                <button class="category-btn" data-category="science">
+                    <i class="fas fa-flask"></i>
+                    School of Sciences
+                </button>
+                <button class="category-btn" data-category="business">
+                    <i class="fas fa-briefcase"></i>
+                    School of Business
+                </button>
+                <button class="category-btn" data-category="arts">
+                    <i class="fas fa-palette"></i>
+                    School of Arts & Design
+                </button>
+            </div>
+            <div class="schools-grid" id="schoolsGrid">
+                <!-- Schools will be populated by JavaScript -->
             </div>
         </section>
 
-        <section id="tracking" class="tracking-section hidden">
-            <h2>Progress Tracking</h2>
-            <div class="tracking-container">
-                <div class="progress-overview">
-                    <h3>Your Progress</h3>
-                    <div class="progress-bars" id="progressBars">
-                        <!-- Progress bars  by JavaScript -->
+        <section id="tracking" class="suggestion-section">
+            <h2>Suggestions Box</h2>
+            <div class="suggestion-container">
+                <div class="suggestion-form">
+                    <h3>Submit Your Suggestion</h3>
+                    <form id="suggestionForm">
+                        <div class="form-group">
+                            <label for="suggestorName">Name</label>
+                            <input type="text" id="suggestorName" required placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="suggestorEmail">Email</label>
+                            <input type="email" id="suggestorEmail" required placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="suggestionText">Your Suggestion</label>
+                            <textarea id="suggestionText" required placeholder="Share your thoughts or suggestions..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit Suggestion</button>
+                    </form>
+                </div>
+                <div class="suggestions-list">
+                    <h3>Recent Suggestions</h3>
+                    <div id="suggestionsList">
+                        <!-- Suggestions will be populated by JavaScript -->
                     </div>
-                </div>
-                <div class="completed-tasks">
-                    <h3>Completed Tasks</h3>
-                    <div id="completedTasksList">
-                        <!-- Completed tasks  by JavaScript -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="roadmap" class="roadmap-section hidden">
-            <h2>Study Roadmap</h2>
-            <button class="back-button" onclick="hideRoadmap()"><i class="fas fa-arrow-left"></i> Back to Fields</button>
-            <div id="roadmapContent"></div>
-        </section>
-
-        <section id="features" class="features-section">
-            <h2>Why Choose UniGUIDE?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-road"></i>
-                    <h3>Clear Roadmap</h3>
-                    <p>Step-by-step guidance for your educational journey</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-project-diagram"></i>
-                    <h3>Project Ideas</h3>
-                    <p>Industry-relevant projects for your portfolio</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Progress Tracking</h3>
-                    <p>Monitor your learning journey</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Community Support</h3>
-                    <p>Learn and grow with peers</p>
                 </div>
             </div>
         </section>
     </main>
-
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -142,24 +143,33 @@
     </footer>
 
     <!-- Login Modal -->
-    <div id="loginModal" class="modal hidden">
+    <div id="loginModal" class="modal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Login to UniGUIDE</h2>
-            <form id="loginForm">
+            <div class="modal-header">
+                <h2>Welcome Back</h2>
+                <button class="close-btn" onclick="closeLoginModal()">&times;</button>
+            </div>
+            <form class="login-form">
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" required>
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" required>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
                 </div>
-                <button type="submit" class="cta-button">Login</button>
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                <button type="submit" class="submit-btn">Sign in</button>
             </form>
         </div>
     </div>
 
-    <script src="script2.js"></script>
+    <script src="script4.js"></script>
 </body>
 </html>
