@@ -1,14 +1,15 @@
 :root {
     --primary-color: #2563eb;
-    --primary-hover: #1d4ed8;
-    --text-color: #1f2937;
-    --gray-light: #f3f4f6;
-    --gray-medium: #9ca3af;
-    --white: #ffffff;
+--primary-hover: #1d4ed8;
+--text-color: #1f2937;
+--gray-light: #f3f4f6;
+--gray-medium: #9ca3af;
+--white: #ffffff;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 * {
+    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -22,7 +23,7 @@ body {
 
 /* Header Styles */
 header {
-    background-color: var(--white);
+    background-color: #2c3e50;
     box-shadow: var(--shadow);
     position: fixed;
     width: 100%;
@@ -42,7 +43,7 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--white);
 }
 
 nav ul {
@@ -53,13 +54,13 @@ nav ul {
 }
 
 nav ul li a {
-    color: var(--text-color);
+    color: var(--white);
     text-decoration: none;
     transition: color 0.2s;
 }
 
 nav ul li a:hover {
-    color: var(--primary-color);
+    color: var(--white);
 }
 
 .login-btn {
@@ -167,7 +168,7 @@ nav ul li a:hover {
 /* Fields Section */
 .fields-section {
     padding: 5rem 2rem;
-    background-color: var(--gray-light);
+    background-color: #7085b4;
 }
 
 .fields-section h2 {
@@ -331,13 +332,16 @@ nav ul li a:hover {
 }
 
 /* Suggestion Box Section */
+
 .suggestion-section {
+    
     padding: 5rem 2rem;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
 .suggestion-container {
+    
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
@@ -386,7 +390,7 @@ nav ul li a:hover {
 }
 
 .suggestions-list {
-    background-color: var(--dark-blue);
+    background-color: var(--gray-medium);
     border-radius: 0.5rem;
     padding: 2rem;
     box-shadow: var(--shadow);
@@ -566,7 +570,7 @@ nav ul li a:hover {
   }
 }
 footer {
-    background-color: var(--primary-color);
+    background-color:#2c3e50;
     color: var(--white);
     padding: 3rem 2rem 1rem;
 }
